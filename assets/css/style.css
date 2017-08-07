@@ -1,0 +1,83 @@
+
+.loader{
+    position: relative;
+    float: right;
+    border:16px solid #a3a3b1;
+    border-radius: 50%;
+    /*border-top: 16px solid #2d2a2a;*/
+    width: 120px;
+    height: 120px;
+    animation-duration: 6s;
+animation-duration: 120ms;
+    animation: spin 10s linear infinite;
+}
+    .seconds{
+        position: relative;
+    float: right;
+    border:10px solid tomato;
+    border-radius: 50%;
+    border-top: 10px solid aliceblue;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    font-size: 20px;
+    margin: 0 , auto;
+    padding: 10px;
+        /*border-width: 5px solid tomato;
+        box-shadow: 30px;
+        color:#333333; 
+        font-size:50px;
+        border-radius: 50px;
+        text-align: center; 
+        background: #c8e5bc;
+        width: 100px;
+        height: 100px;
+        position: absolute;*/
+    }
+
+
+@keyframes spin{
+
+    0% {transform: rotate(0deg);}
+/*    50%{transform: rotate(360deg);}
+*/    100%{transform: rotate(360deg);}
+}
+
+div.jumbotron{
+    background-color: #2d2a2a;
+    color: #a3a3b1;
+    margin-top: 20px;
+}
+.alert-success{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 20px;
+font-family: 'Orbitron', sans-serif; }
+    .alert-info{
+         font-family: 'Orbitron', sans-serif;
+        text-align: center;
+    font-size: 20px;
+    }
+    .alert-warning {
+    font-family: 'Orbitron', sans-serif;
+        text-align: center;
+    font-size: 20px;
+    }
+    .alert-danger {
+ font-family: 'Orbitron', sans-serif;
+        text-align: center;
+    font-size: 20px;
+    }
+    #ans1{
+font-family: 'Orbitron', sans-serif;
+height: 50px;"
+    }
+      #ans2{
+font-family: 'Orbitron', sans-serif;
+height: 50px;"
+    }
+      #ans3{
+font-family: 'Orbitron', sans-serif;
+height: 50px;"
+    }
+    
