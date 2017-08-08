@@ -1,27 +1,15 @@
 $(document).ready(function() {
 
-
-
-
-        function displayQuestion(gameQuestion) {
-
-            $('.question').text(gameQuestion.question)
-
-            $('.answers').each(function(index, answer) {
-
-                    $(this).text(gameQuestion.answers[index])
-                }
-
-
-            )
-        }
-
-
-    $(".alert").hide();
-    var questions = [{
+var questions = [{
             question: 'House of Cards? Who play Frank Underwood',
             answers: ['Frank Underwood', 'Kevin Spasey', 'Stiven Sigal', 'Vladimir Putin'],
             correctAnswer: 'Kevin Spasey'
+        },
+
+        {
+            question: 'How many feet? In one Foot?',
+            answers: ['1', '12', 'same', 'dontknow'],
+            correctAnswer: 'dontknow'
         },
 
         {
@@ -51,24 +39,44 @@ $(document).ready(function() {
         }
 
     ]
-    var timer = 10;
+
+
+
+var timer = 10;
     var questionIndex = 0;
     var gameQuestion = questions[questionIndex];
 
+        function displayQuestion(gameQuestion) {
+
+            $('.question').text(gameQuestion.question)
+
+            $('.answers').each(function(index, answer) {
+
+                    $(this).text(gameQuestion.answers[index])
+                }
+
+
+            )
+        }
+
+
+    $(".alert").hide();
+    
+    
+
 
 function DisplayAlert(string) {
-        timer = 10;  
     $(`.${string}`).show()
 
     setTimeout(function(){
            
             $(`.${string}`).hide()
 
-    }, 3000)
+    }, 2000)
 }
 
- // DisplayAlert("success")
- // DisplayAlert("danger")
+
+
 
     $(document).on('click', '.startbtn', function(event) {
         event.preventDefault();
@@ -77,6 +85,20 @@ function DisplayAlert(string) {
         function reduceTime() {
 
             if (timer <= 0) {
+
+
+
+  
+        $("<audio></audio>").attr({
+            'src': 'assets/music/horn.wav',
+            'volume': 0.4,
+            'autoplay': 'autoplay'
+        }).appendTo("body");
+
+
+
+
+              timer=10;
                 // clearInterval(handle?: long)
                  questionIndex++
                DisplayAlert("danger")
@@ -84,8 +106,16 @@ function DisplayAlert(string) {
                console.log("questionIndex")
                // console.log(questionIndex)
                // console.log(gameQuestion)
-               gameQuestion = questions[questionIndex];
-               displayQuestion(gameQuestion)
+              if(questionIndex <= questions.length){
+             gameQuestion = questions[questionIndex];
+             displayQuestion(gameQuestion)
+              }else{
+              alert('Game Over!')
+              questionIndex = 0;
+              gameQuestion = questions[questionIndex];
+             displayQuestion(gameQuestion)
+             timer =10 
+              }
             }
 
             timer--
@@ -108,7 +138,42 @@ function DisplayAlert(string) {
 
 
         $(document).on('click', '.answers', function(event) {
-            console.log($(this).text())
+          timer = 10 
+          console.log(gameQuestion.correctAnswer)
+          // debugger;
+            var userAnser = $(this).text()
+          if(userAnser=== gameQuestion.correctAnswer){
+             DisplayAlert("success")
+              questionIndex++
+              if(questionIndex <= questions.length){
+             gameQuestion = questions[questionIndex];
+             displayQuestion(gameQuestion)
+              }else{
+              alert('Game Over!')
+              questionIndex = 0;
+              gameQuestion = questions[questionIndex];
+             displayQuestion(gameQuestion)
+             timer =10 
+              }
+
+             // timer = 10;  
+            console.log('You vgot it right')
+          } else{(console.log("Wrong answer"))
+             DisplayAlert("danger")
+             questionIndex++
+
+              if(questionIndex <= questions.length){
+             gameQuestion = questions[questionIndex];
+             displayQuestion(gameQuestion)
+              }else{
+              alert('Game Over!')
+              questionIndex = 0;
+              gameQuestion = questions[questionIndex];
+             displayQuestion(gameQuestion)
+             timer =10 
+              }
+             // timer = 10;   
+         };
 
         });
 

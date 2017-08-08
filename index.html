@@ -1,82 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  
+<head>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <meta http-equiv="refresh" content="5" /> -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- GOOGLE FONT-FAMILY-->
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-   <title>Trivia Game</title>
+    <title>Trivia Game</title>
 
-   
+
     <!-- JQUERY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- 222222222222222222222222222222 -->
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- <script src="javascript/app.js" defer></script> -->
-<!-- 3333333333333333333333333333333 -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 222222222222222222222222222222 -->
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- <script src="javascript/app.js" defer></script> -->
+    <!-- 3333333333333333333333333333333 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
 
-  <!-- BODY CONTENT -->
+<!-- BODY CONTENT -->
 <!--|||||||||||||||||||||||||||||||||||||||||| -->
-  <body>
+
+<body>
     <div class="container">
-      <!-- JUMBOTRON -->
-      <div class="jumbotron">
-        <h1 style="font-family: 'Orbitron', sans-serif;">Trivia Game</h1>
-         <!-- SECONDS COUNT DOWN -->
-        <div class="loader">
-        <div class="secondstext">
-        <span class="seconds"></span>
+        <!-- JUMBOTRON -->
+        <div class="jumbotron">
+            <h1 style="font-family: 'Orbitron', sans-serif;">Trivia Game</h1>
+            <!-- SECONDS COUNT DOWN -->
+            <div class="loader">
+                <div class="secondstext">
+                    <span class="seconds"></span>
+                </div>
+            </div>
+
+            <!--  <div class="smalltext">effrf</div> -->
+
+
+
+            <p class="lead" style="font-family: 'Orbitron', sans-serif;">Welcome to Trivia game.We Prepare set of Qestions for you,u must be realise hardness of reading text out?Thats right,it must confuse,and distract you,go ahead<i class="fa fa-snowflake-o" aria-hidden="true"></i> get your mind right, and dive
+                into you data of historical moments</p><br>
+            <p></p>
+            <p><a class="startbtn btn btn-lg btn-success" href="#" role="button" style="font-family: 'Orbitron', sans-serif;">click ME</a></p>
         </div>
+        <!-- Clock -->
+        <div class="panel">
+
+            <div class="text-center">
+
+                <h2 class="question"></h2>
+            </div>
         </div>
+        <!-- INPUT ,AND DISPALY NEW QESTIONS -->
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default answers " id="ans1">answer 1</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default answers" id="ans2">answer  2</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default answers" id="ans3">answer 3</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default answers" id="ans3">answer 4</button>
+            </div>
+        </div>
+        <div class="alert alert-success success" role="alert">good job</div>
+        <div class="alert alert-danger danger" role="alert">thats iiiiiit</div>
 
-       <!--  <div class="smalltext">effrf</div> -->
-      
-        
-
-        <p class="lead" style="font-family: 'Orbitron', sans-serif;" >Welcome to Trivia game.We Prepare set of Qestions for you,u must be realise hardness of reading text out?Thats right,it must confuse,and distract you,go ahead<i class="fa fa-snowflake-o" aria-hidden="true"></i> get your mind right, and dive into you data of 
-        historical moments</p><br><p></p>
-        <p><a class="startbtn btn btn-lg btn-success" href="#" role="button" style="font-family: 'Orbitron', sans-serif;">click ME</a></p>
-      </div>
-      <!-- Clock -->
-   <div class="panel">
-     
-     <div class="text-center">
-       
-          <h2 class="question"></h2>
-     </div>
-   </div>
-      <!-- INPUT ,AND DISPALY NEW QESTIONS -->
-     <div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default answers " id="ans1">answer 1</button>
-  </div>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default answers" id="ans2">answer  2</button>
-  </div>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default answers" id="ans3">answer 3</button>
-  </div>
-    <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default answers" id="ans3">answer 4</button>
-  </div>
-</div>
-<div class="alert alert-success success" role="alert">good job</div>
-<div class="alert alert-danger danger" role="alert">thats iiiiiit</div>
-
-</div>
-       
+    </div>
 
 
 
-  </body>
-    <script type="text/javascript"  src="assets/javascript/app.js"></script>
+
+</body>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
+
 </html>
